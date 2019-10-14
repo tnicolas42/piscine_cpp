@@ -6,7 +6,8 @@ Account::Account() :
   _accountIndex(_nbAccounts),
   _amount(0),
   _nbDeposits(0),
-  _nbWithdrawals(0)
+  _nbWithdrawals(0),
+  _nbCheckCall(0)
 {
     _nbAccounts++;
     Account::_displayTimestamp();
@@ -18,7 +19,8 @@ Account::Account(int initial_deposit) :
   _accountIndex(_nbAccounts),
   _amount(initial_deposit),
   _nbDeposits(0),
-  _nbWithdrawals(0)
+  _nbWithdrawals(0),
+  _nbCheckCall(0)
 {
     _totalAmount += _amount;
     _nbAccounts++;
@@ -60,7 +62,10 @@ bool	Account::makeWithdrawal( int withdrawal ) {
         ";nb_withdrawals:" << _nbWithdrawals << std::endl;
     return true;
 }
-int		Account::checkAmount( void ) const { return _amount; }
+int		Account::checkAmount( void ) const {
+    _nbCheckCall++;
+    return _amount;
+}
 void	Account::displayStatus( void ) const {
     Account::_displayTimestamp();
     std::cout << "index:" << _accountIndex <<
