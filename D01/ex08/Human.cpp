@@ -16,8 +16,10 @@ void Human::action(std::string const & action_name, std::string const & target) 
     for (uint32_t i=0; i < sz; i++) {
         if (action_name == actions[i].name) {
             ((*this).*(actions[i].f))(target);
+            return;
         }
     }
+    std::cout << "invalid action for human" << std::endl;
 }
 
 void Human::meleeAttack(std::string const & target) {
