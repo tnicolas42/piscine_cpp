@@ -42,7 +42,7 @@ void search(PhoneContact (&contacts)[MAX_CONTACT]) {
     std::cin >> indexStr;
     bool err = false;
     for (uint32_t i=0; i < indexStr.size(); i++) {
-        if (!isnumber(indexStr[i])) {
+        if (!isnumber(indexStr[i]) || i > 3) {
             err = true;
             break;
         }
