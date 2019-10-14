@@ -10,7 +10,7 @@ HEADS = Pony.hpp
 INC = $(addprefix -I , $(HEADS))
 OBJS	= $(addprefix $(OBJS_DIR)/, $(SRC:.cpp=.o))
 
-CC = g++
+CC = clang++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 all: $(NAME)
