@@ -1,4 +1,4 @@
-NAME = a.out
+NAME = PhoneContact
 
 SRCS_DIR	= .
 OBJS_DIR	= objs

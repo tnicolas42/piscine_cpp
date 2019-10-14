@@ -16,9 +16,9 @@ void add(PhoneContact (&contacts)[MAX_CONTACT]) {
             err = false;
             break;
         }
-        if (err) {
-            std::cout << "Can't add contacts (already " << MAX_CONTACT << ")" << std::endl;
-        }
+    }
+    if (err) {
+        std::cout << "Can't add contacts (already " << MAX_CONTACT << ")" << std::endl;
     }
 }
 

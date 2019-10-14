@@ -36,3 +36,7 @@
 .DS_Store
 *.vim
 *.swp
+
+# Executable
+megaphone
+PhoneContact
