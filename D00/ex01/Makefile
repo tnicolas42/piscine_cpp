@@ -11,7 +11,7 @@ INC = $(addprefix -I , $(HEADS))
 OBJS	= $(addprefix $(OBJS_DIR)/, $(SRC:.cpp=.o))
 
 CC = g++
-CFLAGS = -std=c++98 -Wall -Wextra #-Werror
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 all: $(NAME)
 
