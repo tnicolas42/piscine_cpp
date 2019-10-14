@@ -26,7 +26,8 @@ $(OBJS_DIR):
 	@mkdir -p $(dir $(OBJS))
 
 clean:
-	rm -f $(SRC)
+	rm -f $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	rm -f $(NAME)

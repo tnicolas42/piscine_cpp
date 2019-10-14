@@ -31,6 +31,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
     Account::_totalAmount += withdrawal;
     _nbWithdrawals++;
     Account::_totalNbWithdrawals++;
+    return true;
 }
 int		Account::checkAmount( void ) const { return _amount; }
 void	Account::displayStatus( void ) const {
