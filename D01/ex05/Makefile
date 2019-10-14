@@ -1,4 +1,4 @@
-NAME = ex03
+NAME = ex05
 
 SRCS_DIR	= .
 OBJS_DIR	= objs
