@@ -73,3 +73,6 @@ ex14
 !ex14/
 ex15
 !ex15/
+
+# d01/ex07
+*.replace
