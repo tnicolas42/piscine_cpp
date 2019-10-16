@@ -91,11 +91,11 @@ void ScavTrap::beRepaired(uint32_t amount) {
 }
 void ScavTrap::challengeNewcomer() {
     static std::string challengeNames[] = {
-        "challenge01",
-        "challenge02",
-        "challenge03",
-        "challenge04",
-        "challenge05"
+        "You versus me! Me versus you! Either way!",
+        "I will prove to you my robotic superiority!",
+        "Dance battle! Or, you know... regular battle.",
+        "Man versus machine! Very tiny streamlined machine!",
+        "Care to have a friendly duel?"
     };
     int challengeId = std::rand() % (sizeof(challengeNames) / sizeof(challengeNames[0]));
 
