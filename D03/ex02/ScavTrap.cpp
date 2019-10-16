@@ -4,13 +4,13 @@
 ScavTrap::ScavTrap() :
 ClapTrap("defaultName", 100, 100, 50, 50, 1, 20, 15, 3) {
     _type = "SCAVTRAP";
-    std::cout << "[" << _type << "] new FragTrap: " << _name << std::endl;
+    std::cout << "[" << _type << "] new ScavTrap: " << _name << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string &name) :
 ClapTrap(name, 100, 100, 50, 50, 1, 20, 15, 3) {
     _type = "SCAVTRAP";
-    std::cout << "[" << _type << "] new FragTrap: " << _name << std::endl;
+    std::cout << "[" << _type << "] new ScavTrap: " << _name << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &src) {
