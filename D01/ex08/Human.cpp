@@ -29,5 +29,5 @@ void Human::rangedAttack(std::string const & target) {
     std::cout << "rangedAttack on " << target << std::endl;
 }
 void Human::intimidatingShout(std::string const & target) {
-    std::cout << "rangedAttack on " << target << std::endl;
+    std::cout << "intimidatingShout on " << target << std::endl;
 }
