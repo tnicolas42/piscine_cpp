@@ -13,7 +13,9 @@ ClapTrap(name, 100, 100, 50, 50, 1, 20, 15, 3) {
     std::cout << "[" << _type << "] new NinjaTrap: " << _name << std::endl;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const &src) {
+NinjaTrap::NinjaTrap(NinjaTrap const &src) :
+ClapTrap(src) {
+    _type = "NINJATRAP";
     *this = src;
 }
 
@@ -23,28 +25,32 @@ NinjaTrap::~NinjaTrap() {
 
 NinjaTrap &NinjaTrap::operator=(NinjaTrap const &rhs) {
     if (this != &rhs) {
-        ClapTrap::operator=(rhs);
+        ;
     }
     return *this;
 }
 
 void NinjaTrap::ninjaShoebox(ClapTrap &trap) {
     int damage = 30;
-    atk("ClapAttack", damage, 20, trap.getName());
-    trap.takedamage(damage);
+    if (atk("ClapAttack", damage, 20, trap.getName())) {
+        trap.takedamage(damage);
+    }
 }
 void NinjaTrap::ninjaShoebox(FragTrap &trap) {
     int damage = 30;
-    atk("FragAttack", damage, 20, trap.getName());
-    trap.takedamage(damage);
+    if (atk("FragAttack", damage, 20, trap.getName())) {
+        trap.takedamage(damage);
+    }
 }
 void NinjaTrap::ninjaShoebox(ScavTrap &trap) {
     int damage = 30;
-    atk("ScavAttack", damage, 20, trap.getName());
-    trap.takedamage(damage);
+    if (atk("ScavAttack", damage, 20, trap.getName())) {
+        trap.takedamage(damage);
+    }
 }
 void NinjaTrap::ninjaShoebox(NinjaTrap &trap) {
     int damage = 30;
-    atk("NinjaAttack", damage, 20, trap.getName());
-    trap.takedamage(damage);
+    if (atk("NinjaAttack", damage, 20, trap.getName())) {
+        trap.takedamage(damage);
+    }
 }

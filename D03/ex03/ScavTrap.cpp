@@ -13,7 +13,9 @@ ClapTrap(name, 100, 100, 50, 50, 1, 20, 15, 3) {
     std::cout << "[" << _type << "] new ScavTrap: " << _name << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src) {
+ScavTrap::ScavTrap(ScavTrap const &src) :
+ClapTrap(src) {
+    _type = "SCAVTRAP";
     *this = src;
 }
 
@@ -23,7 +25,7 @@ ScavTrap::~ScavTrap() {
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs) {
     if (this != &rhs) {
-        ClapTrap::operator=(rhs);
+        ;
     }
     return *this;
 }

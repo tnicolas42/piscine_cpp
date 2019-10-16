@@ -16,7 +16,7 @@ class ClapTrap {
 
         ClapTrap &operator=(ClapTrap const &rhs);
 
-        void atk(const std::string atkName, int damage, int energy, const std::string &target);
+        bool atk(const std::string atkName, int damage, int energy, const std::string &target);
         void rangedAttack(const std::string &target);
         void meleeAttack(const std::string &target);
         void takedamage(uint32_t amount);
