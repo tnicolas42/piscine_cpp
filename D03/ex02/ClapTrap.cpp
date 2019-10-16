@@ -34,6 +34,7 @@ _armorAtkReduction(armorAtkReduction) {
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src) {
+    _type = "CLAPTRAP";
     *this = src;
 }
 
@@ -44,7 +45,6 @@ ClapTrap::~ClapTrap() {
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
     if (this != &rhs) {
         _name = rhs.getName();
-        _type = rhs.getType();
         _hitPoint = rhs.getHitPoint();
         _maxHitPoint = rhs.getMaxHitPoint();
         _energyPoint = rhs.getEnergyPoint();
@@ -57,15 +57,16 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
     return *this;
 }
 
-void ClapTrap::atk(const std::string atkName, int damage, int energy, const std::string &target) {
+bool ClapTrap::atk(const std::string atkName, int damage, int energy, const std::string &target) {
     if (_energyPoint - energy < 0) {
         std::cout << "[CLAPTRAP][" << _type << "][" << _name << "][ERROR]: not enouth energy (" <<
-            _energyPoint << "). needed " << RANGED_ATK_ENERGY << std::endl;
-        return;
+            _energyPoint << "). needed " << energy << std::endl;
+        return false;
     }
     _energyPoint -= energy;
     std::cout << "[CLAPTRAP][" << _type << "][" << _name << "] atk " << atkName << " on " <<
         target << " (" << damage << " damage)" << std::endl;
+    return true;
 }
 
 void ClapTrap::rangedAttack(const std::string &target) {
