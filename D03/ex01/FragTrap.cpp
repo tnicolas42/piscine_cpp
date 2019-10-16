@@ -91,11 +91,11 @@ void FragTrap::beRepaired(uint32_t amount) {
 }
 void FragTrap::vaulthunter_dot_exe(std::string const & target) {
     static std::string atksName[] = {
-        "attack01",
-        "attack02",
-        "attack03",
-        "attack04",
-        "attack05"
+        "Laser Inferno",
+        "Gun Wizard",
+        "Clap-in-the-Box",
+        "Pirate Ship Mode",
+        "Torgue Fiesta"
     };
     static int atksdamage[] = {15, 20, 25, 30, 35};
     static int atksEnergy[] = {25, 25, 25, 25, 25};
