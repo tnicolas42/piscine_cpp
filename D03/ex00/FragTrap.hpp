@@ -2,6 +2,9 @@
 
 #include <string>
 
+#define RANGED_ATK_ENERGY 0
+#define MELEE_ATK_ENERGY 0
+
 class FragTrap {
     public:
         FragTrap();
@@ -13,7 +16,7 @@ class FragTrap {
 
         void rangedAttack(const std::string &target);
         void meleeAttack(const std::string &target);
-        void takeDammage(uint32_t amount);
+        void takedamage(uint32_t amount);
         void beRepaired(uint32_t amount);
         void vaulthunter_dot_exe(std::string const & target);
 
@@ -23,8 +26,8 @@ class FragTrap {
         int getEnergyPoint() const;
         int getMaxEnergyPoint() const;
         int getLevel() const;
-        int getMeleeAtkDammage() const;
-        int getRangedAtkDammage() const;
+        int getMeleeAtkdamage() const;
+        int getRangedAtkdamage() const;
         int getArmorAtkReduction() const;
     protected:
     private:
@@ -34,7 +37,7 @@ class FragTrap {
         int _energyPoint;
         int _maxEnergyPoint;
         int _level;
-        int _meleeAtkDammage;
-        int _rangedAtkDammage;
+        int _meleeAtkdamage;
+        int _rangedAtkdamage;
         int _armorAtkReduction;
 };
