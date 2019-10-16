@@ -10,14 +10,14 @@ int main(int ac, char **av)
     (void)av;
     // create NinjaTrap
     std::cout << "/* init */" << std::endl;
+    std::cout << "// create FragTrap (parent = ClapTrap)" << std::endl;
+    FragTrap frag2("frag player");
+    std::cout << "// create ScavTrap (parent = ClapTrap)" << std::endl;
+    ScavTrap scav("scav player");
     std::cout << "// create NinjaTrap (parent = ClapTrap)" << std::endl;
     NinjaTrap ninja("ninja player");
     std::cout << "// create SuperTrap (parents = NinjaTrap & FragTrap)" << std::endl;
     SuperTrap super("super player");
-    std::cout << "// create ScavTrap (parent = ClapTrap)" << std::endl;
-    ScavTrap scav("scav player");
-    std::cout << "// create FragTrap (parent = ClapTrap)" << std::endl;
-    FragTrap frag2("frag player");
 
     std::cout << std::endl;
     FragTrap frag = frag2;
