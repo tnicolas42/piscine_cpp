@@ -11,6 +11,7 @@ _level(1),
 _meleeAtkdamage(20),
 _rangedAtkdamage(20),
 _armorAtkReduction(5) {
+    srand(time(NULL));
     std::cout << "FR4G-TP new FragTrap: " << _name << std::endl;
 }
 
@@ -24,6 +25,7 @@ _level(1),
 _meleeAtkdamage(20),
 _rangedAtkdamage(20),
 _armorAtkReduction(5) {
+    srand(time(NULL));
     std::cout << "FR4G-TP new FragTrap: " << _name << std::endl;
 }
 
