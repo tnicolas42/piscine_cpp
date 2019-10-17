@@ -2,7 +2,7 @@
 #include <iostream>
 
 Cure::Cure() :
-AMateria("ice") {
+AMateria("cure") {
 }
 
 Cure::Cure(Cure const &src) :

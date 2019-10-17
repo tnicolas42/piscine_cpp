@@ -15,7 +15,7 @@ class MateriaSource : public IMaterialSource {
         MateriaSource &operator=(MateriaSource const &rhs);
         void learnMateria(AMateria *materia);
         AMateria *createMateria(std::string const &type);
-        AMateria *createMateria(int idx) const;
+        AMateria *getMateria(int idx) const;
     protected:
     private:
         AMateria *_learned[MAX_LEARN];

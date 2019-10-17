@@ -13,16 +13,14 @@ MateriaSource::MateriaSource(MateriaSource const &src) {
 
 MateriaSource::~MateriaSource() {
     for (int i=0; i < MAX_LEARN; i++) {
-        if (_learned[i] != nullptr) {
-            delete _learned[i];
-        }
+        delete _learned[i];
     }
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &rhs) {
     if (this != &rhs) {
         for (int i=0; i < MAX_LEARN; i++) {
-            _learned[i] = rhs.createMateria(i);
+            _learned[i] = rhs.getMateria(i);
         }
     }
     return *this;
@@ -32,9 +30,11 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &rhs) {
 void MateriaSource::learnMateria(AMateria *materia) {
     for (int i=0; i < MAX_LEARN; i++) {
         if (_learned[i] == nullptr) {
-            _learned[i] = materia->clone();
+            _learned[i] = materia;
+            return;
         }
     }
+    std::cout << "not enouth place to learn some others Matreria" << std::endl;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type) {
@@ -46,13 +46,13 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
     return nullptr;
 }
 
-AMateria *MateriaSource::createMateria(int idx) const {
+AMateria *MateriaSource::getMateria(int idx) const {
     if (idx < 0 || idx >= MAX_LEARN) {
         std::cout << "invalid index for createMateria" << std::endl;
         return nullptr;
     }
     if (_learned[idx] != nullptr) {
-        return _learned[idx]->clone();
+        return _learned[idx];
     }
     return nullptr;
 }

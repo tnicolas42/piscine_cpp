@@ -20,6 +20,9 @@ Character::Character(Character const &src) {
 }
 
 Character::~Character() {
+    for (int i=0; i < INVENTORY_SZ; i++) {
+        delete _inventory[i];
+    }
 }
 
 Character &Character::operator=(Character const &rhs) {
@@ -55,7 +58,12 @@ void Character::use(int idx, ICharacter &target) {
         std::cout << "invalid index" << std::endl;
         return;
     }
-    _inventory[idx]->use(target);
+    if (_inventory[idx] == nullptr) {
+        std::cout << "you don't ahave any object at " << idx << " in your inventory" << std::endl;
+    }
+    else {
+        _inventory[idx]->use(target);
+    }
 }
 
 std::string const &Character::getName() const { return _name; }
