@@ -4,6 +4,7 @@
 #include "Character.hpp"
 #include "Enemy.hpp"
 #include "RadScorpion.hpp"
+#include "SuperMutant.hpp"
 #include <iostream>
 
 int main(int ac, char **av)
