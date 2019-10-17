@@ -59,7 +59,7 @@ void Character::use(int idx, ICharacter &target) {
         return;
     }
     if (_inventory[idx] == nullptr) {
-        std::cout << "you don't ahave any object at " << idx << " in your inventory" << std::endl;
+        std::cout << "you don't have any object at " << idx << " in your inventory" << std::endl;
     }
     else {
         _inventory[idx]->use(target);
