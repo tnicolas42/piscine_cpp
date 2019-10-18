@@ -17,6 +17,7 @@ class Form;
 class Bureaucrat {
     public:
         Bureaucrat(std::string const &name);
+        Bureaucrat(std::string const &name, int grade);
         Bureaucrat(Bureaucrat const &src);
         virtual ~Bureaucrat();
 

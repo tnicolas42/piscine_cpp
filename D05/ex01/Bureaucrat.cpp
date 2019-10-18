@@ -11,6 +11,15 @@ _name(name),
 _grade(LOWER_GRADE) {
 }
 
+Bureaucrat::Bureaucrat(std::string const &name, int grade) :
+_name(name),
+_grade(grade) {
+    if (IS_TOO_HIGHER_GRADE(_grade))
+        throw Bureaucrat::GradeTooHighException();
+    if (IS_TOO_LOWER_GRADE(_grade))
+        throw Bureaucrat::GradeTooLowException();
+}
+
 Bureaucrat::Bureaucrat(Bureaucrat const &src) :
 _name(src.getName()) {
     *this = src;
