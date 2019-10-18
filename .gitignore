@@ -78,3 +78,5 @@ ex15
 
 # d01/ex07
 *.replace
+# d05/ex02
+*_shrubbery

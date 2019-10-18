@@ -12,6 +12,7 @@ class Form {
 
         Form &operator=(Form const &rhs);
         void beSigned(Bureaucrat const &b);
+        virtual void execute(Bureaucrat const &executor) = 0;
         // getter
         std::string const &getName() const;
         int getRequiredGradeToSign() const;
@@ -19,19 +20,27 @@ class Form {
         bool isSigned() const;
 
         // error definitions
-        class GradeTooHighException : public std::exception {
+        class FormException : public std::exception {};
+        class GradeTooHighException : public FormException {
             public:
                 virtual const char *what() const throw() {
                     return "Grade too high";
                 }
         };
-        class GradeTooLowException : public std::exception {
+        class GradeTooLowException : public FormException {
             public:
                 virtual const char *what() const throw() {
                     return "Grade too low";
                 }
         };
+        class FormNotSignedException : public FormException {
+            public:
+                virtual const char *what() const throw() {
+                    return "The form is not signed";
+                }
+        };
     protected:
+        void canExec(Bureaucrat const &executor) ;
     private:
         Form();
         std::string const _name;

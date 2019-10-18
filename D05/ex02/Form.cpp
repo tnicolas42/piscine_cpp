@@ -42,6 +42,13 @@ void Form::beSigned(Bureaucrat const &b) {
         throw Form::GradeTooLowException();
 }
 
+void Form::canExec(Bureaucrat const &executor) {
+    if (!_isSigned)
+        throw Form::FormNotSignedException();
+    else if (executor.getGrade() > _requiredGradeExec)
+        throw Form::GradeTooLowException();
+}
+
 std::string const &Form::getName() const { return _name; }
 int Form::getRequiredGradeToSign() const { return _requiredGradeSign; }
 int Form::getRequiredGradeToExec() const { return _requiredGradeExec; }
@@ -49,6 +56,6 @@ bool Form::isSigned() const { return _isSigned; }
 
 std::ostream &operator<<(std::ostream &o, Form const &other) {
     o << "Form: " << other.getName() << " (required grade " << other.getRequiredGradeToSign() <<
-    " to be signed and " << other.getRequiredGradeToExec() << " to exectute" << std::endl;
+        " to be signed and " << other.getRequiredGradeToExec() << " to exectute)" << std::endl;
     return o;
 }
