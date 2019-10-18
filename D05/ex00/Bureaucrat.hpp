@@ -37,7 +37,7 @@ class Bureaucrat {
     protected:
     private:
         Bureaucrat();
-        std::string _name;
+        std::string const _name;
         int _grade;
 };
 
