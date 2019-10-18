@@ -49,6 +49,6 @@ bool Form::isSigned() const { return _isSigned; }
 
 std::ostream &operator<<(std::ostream &o, Form const &other) {
     o << "Form: " << other.getName() << " (required grade " << other.getRequiredGradeToSign() <<
-    " to be signed and " << other.getRequiredGradeToExec() << " to exectute" << std::endl;
+        " to be signed and " << other.getRequiredGradeToExec() << " to exectute)" << std::endl;
     return o;
 }
