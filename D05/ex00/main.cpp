@@ -6,7 +6,7 @@ int main(int ac, char **av)
 {
     (void)ac;
     (void)av;
-    Bureaucrat b("bob");
+    Bureaucrat b("bob", 150);
 
     try {
         while (1) {

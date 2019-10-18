@@ -8,11 +8,14 @@
 #define HIGHER_GRADE 1
 #define GRADE_UP -1
 #define IS_LOWER_GRADE(grade) (grade >= LOWER_GRADE)
+#define IS_TOO_LOWER_GRADE(grade) (grade > LOWER_GRADE)
 #define IS_HIGHER_GRADE(grade) (grade <= HIGHER_GRADE)
+#define IS_TOO_HIGHER_GRADE(grade) (grade < HIGHER_GRADE)
 
 class Bureaucrat {
     public:
         Bureaucrat(std::string const &name);
+        Bureaucrat(std::string const &name, int grade);
         Bureaucrat(Bureaucrat const &src);
         virtual ~Bureaucrat();
 
