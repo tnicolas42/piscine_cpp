@@ -7,10 +7,10 @@ SRC =	main.cpp
 
 HEADS =
 
-INC = $(addprefix -I , $(HEADS))
+INC		= $(addprefix -I , $(HEADS))
 OBJS	= $(addprefix $(OBJS_DIR)/, $(SRC:.cpp=.o))
 
-CC = clang++
+CC =		clang++
 CFLAGS =	-std=c++98 -Wall -Wextra -Weverything -Werror
 
 all: $(NAME)
@@ -36,7 +36,8 @@ fclean: clean
 	@printf "fclean\n"
 	@rm -f $(NAME)
 
-re: fclean all
+re: fclean
+	@make all
 
 exec: all
 	@printf "exec $(NAME)\n"

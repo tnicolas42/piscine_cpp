@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
+#include <time.h>
 
 struct Data {
     std::string s1;
     int         n;
-    int         _;
+    int         _;  // used for padding (-Wpadded)
     std::string s2;
 };
 
@@ -46,6 +47,7 @@ int main(int ac, char **av)
 {
     (void)ac;
     (void)av;
+    srand(static_cast<uint32_t>(time(NULL)));
 
     void *rawData = serialize();
     Data *data = deserialize(rawData);
