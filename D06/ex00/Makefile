@@ -12,14 +12,13 @@ INC = $(addprefix -I , $(HEADS))
 OBJS	= $(addprefix $(OBJS_DIR)/, $(SRC:.cpp=.o))
 
 CC = clang++
-CFLAGS = -std=c++98 -Wall -Wextra -g3 #-Werror
-LFLAGS = -lncurses
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJS_DIR) $(OBJS)
 	@printf "create -> $(NAME)\n"
-	@$(CC) $(OBJS) $(CFLAGS) $(LFLAGS) -o $(NAME) $(INC)
+	@$(CC) $(OBJS) $(CFLAGS) -o $(NAME) $(INC)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp $(HEADS)
 	@printf "compile -> $@\n"
