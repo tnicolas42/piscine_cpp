@@ -80,7 +80,7 @@ double Convert::toDouble() const {
     for (uint16_t i=0; i < lowerVal.size(); i++) {
         lowerVal[i] = tolower(lowerVal[i]);
     }
-    if (std::regex_match(_val, std::regex("-?\\d+\\.?\\d*f?")))
+    if (std::regex_match(_val, std::regex("^[-+]?\\d+\\.?\\d*f?$")))
         return std::stod(_val);
     for (uint16_t i=0; i < sizeof(notNumbers) / sizeof(notNumbers[0]); i++) {
         if (lowerVal == notNumbers[i]) {
