@@ -19,5 +19,20 @@ WhileEnd &WhileEnd::operator=(WhileEnd const &rhs) {
     return *this;
 }
 
-void WhileEnd::exec() {
+bool WhileEnd::exec() {
+    int count = 0;
+    _brfk->getProgPtr()--;
+    while (_brfk->getProgPtr() > 0) {
+        if (_brfk->getProg()[_brfk->getProgPtr()]->getInstr() == ']')
+            count++;
+        else if (_brfk->getProg()[_brfk->getProgPtr()]->getInstr() == '[') {
+            if (count == 0) {
+                _brfk->getProgPtr()--;  // the next instrcution in while loop is ++
+                return true;
+            }
+            count--;
+        }
+        _brfk->getProgPtr()--;
+    }
+    return false;
 }

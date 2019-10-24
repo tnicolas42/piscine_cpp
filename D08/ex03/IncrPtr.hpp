@@ -11,7 +11,7 @@ class IncrPtr : public AInstruction {
 
         IncrPtr &operator=(IncrPtr const &rhs);
 
-        virtual void exec();
+        virtual bool exec();
     protected:
     private:
         IncrPtr();

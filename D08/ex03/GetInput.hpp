@@ -11,7 +11,7 @@ class GetInput : public AInstruction {
 
         GetInput &operator=(GetInput const &rhs);
 
-        virtual void exec();
+        virtual bool exec();
     protected:
     private:
         GetInput();

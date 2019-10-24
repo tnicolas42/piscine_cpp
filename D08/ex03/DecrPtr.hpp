@@ -11,7 +11,7 @@ class DecrPtr : public AInstruction {
 
         DecrPtr &operator=(DecrPtr const &rhs);
 
-        virtual void exec();
+        virtual bool exec();
     protected:
     private:
         DecrPtr();

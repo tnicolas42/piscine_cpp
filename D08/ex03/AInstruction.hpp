@@ -10,7 +10,7 @@ class AInstruction {
 
         AInstruction &operator=(AInstruction const &rhs);
 
-        virtual void    exec() = 0;
+        virtual bool    exec() = 0;
         Brainfuck       *getBrfk() const;
         char            getInstr() const;
     protected:

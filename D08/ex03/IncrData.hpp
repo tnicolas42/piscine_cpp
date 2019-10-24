@@ -11,7 +11,7 @@ class IncrData : public AInstruction {
 
         IncrData &operator=(IncrData const &rhs);
 
-        virtual void exec();
+        virtual bool exec();
     protected:
     private:
         IncrData();

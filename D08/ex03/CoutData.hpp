@@ -11,7 +11,7 @@ class CoutData : public AInstruction {
 
         CoutData &operator=(CoutData const &rhs);
 
-        virtual void exec();
+        virtual bool exec();
     protected:
     private:
         CoutData();

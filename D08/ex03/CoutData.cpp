@@ -1,4 +1,5 @@
 #include "CoutData.hpp"
+#include <iostream>
 
 CoutData::CoutData(Brainfuck *brfk) :
 AInstruction(brfk, '.') {
@@ -19,5 +20,7 @@ CoutData &CoutData::operator=(CoutData const &rhs) {
     return *this;
 }
 
-void CoutData::exec() {
+bool CoutData::exec() {
+    std::cout << _brfk->getData()[_brfk->getPtr()];
+    return true;
 }

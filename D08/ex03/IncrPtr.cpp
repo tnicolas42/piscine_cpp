@@ -19,5 +19,9 @@ IncrPtr &IncrPtr::operator=(IncrPtr const &rhs) {
     return *this;
 }
 
-void IncrPtr::exec() {
+bool IncrPtr::exec() {
+    if (_brfk->getPtr() >= MAX_STR_SIZE - 1)
+        return false;
+    _brfk->getPtr()++;
+    return true;
 }

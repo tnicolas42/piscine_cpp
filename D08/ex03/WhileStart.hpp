@@ -11,7 +11,7 @@ class WhileStart : public AInstruction {
 
         WhileStart &operator=(WhileStart const &rhs);
 
-        virtual void exec();
+        virtual bool exec();
     protected:
     private:
         WhileStart();

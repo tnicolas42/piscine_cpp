@@ -19,5 +19,9 @@ DecrData &DecrData::operator=(DecrData const &rhs) {
     return *this;
 }
 
-void DecrData::exec() {
+bool DecrData::exec() {
+    if (_brfk->getData()[_brfk->getPtr()] == 0)
+        return false;
+    _brfk->getData()[_brfk->getPtr()]--;
+    return true;
 }

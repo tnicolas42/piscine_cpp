@@ -19,5 +19,9 @@ DecrPtr &DecrPtr::operator=(DecrPtr const &rhs) {
     return *this;
 }
 
-void DecrPtr::exec() {
+bool DecrPtr::exec() {
+    if (_brfk->getPtr() == 0)
+        return false;
+    _brfk->getPtr()--;
+    return true;
 }

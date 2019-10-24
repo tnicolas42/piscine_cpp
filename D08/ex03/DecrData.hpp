@@ -11,7 +11,7 @@ class DecrData : public AInstruction {
 
         DecrData &operator=(DecrData const &rhs);
 
-        virtual void exec();
+        virtual bool exec();
     protected:
     private:
         DecrData();

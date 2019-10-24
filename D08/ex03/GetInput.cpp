@@ -1,4 +1,5 @@
 #include "GetInput.hpp"
+#include <iostream>
 
 GetInput::GetInput(Brainfuck *brfk) :
 AInstruction(brfk, ',') {
@@ -19,5 +20,11 @@ GetInput &GetInput::operator=(GetInput const &rhs) {
     return *this;
 }
 
-void GetInput::exec() {
+bool GetInput::exec() {
+    int ci = std::getchar();
+    if ((ci >= 32 && ci <= 126) || ci == '\n' || ci == '\t') {
+        _brfk->getData()[_brfk->getPtr()] = static_cast<char>(ci);
+        return true;
+    }
+    return false;
 }

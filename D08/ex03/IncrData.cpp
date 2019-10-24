@@ -19,5 +19,9 @@ IncrData &IncrData::operator=(IncrData const &rhs) {
     return *this;
 }
 
-void IncrData::exec() {
+bool IncrData::exec() {
+    if (_brfk->getData()[_brfk->getPtr()] == std::numeric_limits<char>::max())
+        return false;
+    _brfk->getData()[_brfk->getPtr()]++;
+    return true;
 }

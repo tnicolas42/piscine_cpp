@@ -11,7 +11,7 @@ class WhileEnd : public AInstruction {
 
         WhileEnd &operator=(WhileEnd const &rhs);
 
-        virtual void exec();
+        virtual bool exec();
     protected:
     private:
         WhileEnd();
