@@ -1,0 +1,17 @@
+# cpu
+# date
+# files
+# hostname
+# network
+# os
+# ram
+# uptime
+
+date
+hostname
+uptime
+cpu
+files
+network
+os
+ram
